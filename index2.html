@@ -30,7 +30,7 @@
         header h1 {
             margin: 0;
             font-size: 36px;
-            color: #FFD700;
+            color: #ffcc00;
         }
 
         header p {
@@ -58,7 +58,7 @@
         }
 
         nav ul li a:hover {
-            color: #FFD700;
+            color: #ffcc00;
         }
 
         /* Sections */
@@ -70,12 +70,13 @@
             border-radius: 10px;
             box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.3);
             margin-top: 100px;
+            scroll-margin-top: 100px;
         }
 
         h2 {
             font-size: 28px;
             margin-bottom: 20px;
-            color: #FFD700;
+            color: #ffcc00;
         }
 
         ul {
@@ -108,7 +109,13 @@
                 anchor.addEventListener("click", function (event) {
                     event.preventDefault();
                     const targetId = this.getAttribute("href").substring(1);
-                    window.location.hash = targetId;
+                    const targetElement = document.getElementById(targetId);
+                    if (targetElement) {
+                        window.scrollTo({
+                            top: targetElement.offsetTop - 80,
+                            behavior: "smooth"
+                        });
+                    }
                 });
             });
         });
@@ -153,7 +160,7 @@
         <h2>Projects</h2>
         <h3>Railway Reservation System</h3>
         <p>Developed a system for train ticket booking using Python, Java, C++, and MySQL.</p>
-        <p><a href="https://github.com/Harsha-hue" style="color:#FFD700; text-decoration:none; font-weight:bold;">View on GitHub</a></p>
+        <p><a href="https://github.com/Harsha-hue" style="color:#ffcc00; text-decoration:none; font-weight:bold;">View on GitHub</a></p>
     </section>
     
     <section id="contact">
